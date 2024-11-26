@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cash is Unreal Bot</title>
+  <!-- Link to the CSS File -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Link to the JavaScript File -->
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -47,7 +49,7 @@
       </div>
     </div>
 
-    <!-- Search Commands -->
+    <!-- Search Results Section -->
     <div class="search-results">
       <h3>Search Results:</h3>
       <div id="search-output"></div>
@@ -61,16 +63,14 @@
       <button class="tab" onclick="showTab('example')">Example</button>
     </div>
     <div id="syntax" class="tab-content">
-      <h4>Syntax:</h4>
-      <pre>/boosterrole create [role name]</pre>
-      <pre>/boosterrolerenam [new role name]</pre>
-      <pre>/boosterrolebase [role]</pre>
+      <div class="syntax-box">
+        <pre class="language-javascript"><code class="language-javascript">,boosterrole base(role)</code></pre>
+      </div>
     </div>
     <div id="example" class="tab-content hidden">
-      <h4>Example:</h4>
-      <pre>/boosterrole create "VIP Booster"</pre>
-      <pre>/boosterrolerenam "Elite Booster"</pre>
-      <pre>/boosterrolebase "VIP Role"</pre>
+      <div class="syntax-box">
+        <pre class="language-javascript"><code class="language-javascript">/boosterrole create "VIP Booster"</code></pre>
+      </div>
     </div>
   </section>
 
@@ -79,3 +79,4 @@
   </footer>
 </body>
 </html>
+
