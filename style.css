@@ -28,6 +28,13 @@ input[type="text"] {
   width: 50%;
   border: none;
   border-radius: 5px;
+  background-color: #42105c;
+  color: white;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  background-color: #9e51c4;
 }
 
 section {
@@ -99,6 +106,22 @@ section {
 
 .tab-content.hidden {
   display: block;
+}
+
+.syntax-box {
+  background-color: #42105c;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+pre {
+  background-color: #530a78;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  overflow-x: auto;
+  color: #ecf0f1;
 }
 
 footer {
