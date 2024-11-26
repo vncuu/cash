@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cash is unreal.</title>
+  <title>Cash is Unreal Bot</title>
 
   <!-- Embedded CSS -->
   <style>
@@ -186,6 +186,22 @@
     .status-repair { background-color: #faa61a; }
     .status-maintain { background-color: #f04747; }
     .status-offline { background-color: #747f8d; }
+
+    /* Info Message Styling */
+    .info-message {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 20px;
+      background-color: #9e51c4;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .info-message svg {
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
@@ -202,11 +218,19 @@
     <div class="bot-info">
       <img src="xx.png" alt="Cash is Unreal Bot" class="bot-pfp">
       <div class="bot-description">
-        <h2>cash is unreal.</h2>
-        <p>A powerful bot made for full auto control of alt accounts, special booster roles, moderation, vanity rewards, fun and much more soon...</p>
+        <h2>Cash is Unreal.</h2>
+        <p>A powerful bot made for full auto control of alt accounts, special booster roles, moderation, and more.</p>
       </div>
     </div>
   </section>
+
+  <!-- Info Message Before Status -->
+  <div class="info-message">
+    <svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="flex-none w-5 h-5 text-zinc-400 dark:text-zinc-300" aria-label="Info">
+      <path d="M8 0C3.58125 0 0 3.58125 0 8C0 12.4187 3.58125 16 8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0ZM8 14.5C4.41563 14.5 1.5 11.5841 1.5 8C1.5 4.41594 4.41563 1.5 8 1.5C11.5844 1.5 14.5 4.41594 14.5 8C14.5 11.5841 11.5844 14.5 8 14.5ZM9.25 10.5H8.75V7.75C8.75 7.3375 8.41563 7 8 7H7C6.5875 7 6.25 7.3375 6.25 7.75C6.25 8.1625 6.5875 8.5 7 8.5H7.25V10.5H6.75C6.3375 10.5 6 10.8375 6 11.25C6 11.6625 6.3375 12 6.75 12H9.25C9.66406 12 10 11.6641 10 11.25C10 10.8359 9.66563 10.5 9.25 10.5ZM8 6C8.55219 6 9 5.55219 9 5C9 4.44781 8.55219 4 8 4C7.44781 4 7 4.44687 7 5C7 5.55313 7.44687 6 8 6Z"></path>
+    </svg>
+    <span class="text-sm prose min-w-0">The <code>status</code> might take some time to load up</span>
+  </div>
 
   <!-- Bot Status -->
   <section id="bot-status">
@@ -263,7 +287,7 @@
 
   <!-- Discord Invite Button -->
   <div id="discord-invite">
-    <a href="https://discord.com/oauth2/authorize?client_id=1309653399775477833&permissions=8&integration_type=0&scope=bot" class="discord-btn" target="_blank">Invite</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_CLIENT_ID&scope=bot&permissions=YOUR_BOT_PERMISSIONS" class="discord-btn" target="_blank">Invite Cash is Unreal Bot</a>
   </div>
 
   <footer>
@@ -294,4 +318,8 @@
 
     // Tab Switching Functionality
     function showTab(tab, button) {
-      // Change the selected tab style
+      // Change the selected tab style and content display
+    }
+  </script>
+</body>
+</html>
