@@ -81,6 +81,11 @@
       background-color: #42105c;
       padding: 10px;
       border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .command-item:hover {
+      background-color: #9e51c4;
     }
 
     .command-item h4 {
@@ -103,9 +108,14 @@
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
+      color: white;
     }
 
     .tab:hover {
+      background-color: #9e51c4;
+    }
+
+    .tab.selected {
       background-color: #9e51c4;
     }
 
@@ -154,7 +164,7 @@
   <!-- Cash is Unreal Section -->
   <section id="cash-is-unreal">
     <div class="bot-info">
-      <img src="cash-is-unreal-pfp.png" alt="Cash is Unreal Bot" class="bot-pfp">
+      <img src="xx.png" alt="Cash is Unreal Bot" class="bot-pfp">
       <div class="bot-description">
         <h2>Cash is Unreal.</h2>
         <p>A powerful bot made for full auto control of alt accounts, special booster roles, moderation, and more.</p>
@@ -167,15 +177,15 @@
     <div class="bot-commands">
       <h3>Commands for Cash is Unreal.</h3>
       <div class="command-list">
-        <div class="command-item" id="boosterrole">
+        <div class="command-item" data-command="boosterrole">
           <h4>/boosterrole</h4>
           <p>Create a booster role.</p>
         </div>
-        <div class="command-item" id="boosterrolerenam">
+        <div class="command-item" data-command="boosterrolerenam">
           <h4>/boosterrolerenam</h4>
           <p>Rename the booster role.</p>
         </div>
-        <div class="command-item" id="boosterrolebase">
+        <div class="command-item" data-command="boosterrolebase">
           <h4>/boosterrolebase</h4>
           <p>Change the role the bot gives you.</p>
         </div>
@@ -192,8 +202,8 @@
   <!-- Command Syntax and Examples Section -->
   <section id="role-description">
     <div class="tabs">
-      <button class="tab" onclick="showTab('syntax')">Syntax</button>
-      <button class="tab" onclick="showTab('example')">Example</button>
+      <button class="tab" onclick="showTab('syntax', this)">Syntax</button>
+      <button class="tab" onclick="showTab('example', this)">Example</button>
     </div>
     <div id="syntax" class="tab-content">
       <div class="syntax-box">
@@ -234,13 +244,38 @@
     });
 
     // Tab Switching Functionality
-    function showTab(tab) {
+    function showTab(tab, button) {
+      // Change the selected tab style
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('selected'));
+      button.classList.add('selected');
+
+      // Hide all content and show the selected tab's content
       document.querySelectorAll('.tab-content').forEach(function(tabContent) {
         tabContent.classList.add('hidden');
       });
 
       document.getElementById(tab).classList.remove('hidden');
     }
+
+    // Command Click to Show Syntax/Example
+    document.querySelectorAll('.command-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        const command = item.getAttribute('data-command');
+
+        if (command === 'boosterrole') {
+          document.querySelector('#syntax pre code').textContent = ',boosterrole base(role)';
+          document.querySelector('#example pre code').textContent = '/boosterrole create "VIP Booster"';
+        } else if (command === 'boosterrolerenam') {
+          document.querySelector('#syntax pre code').textContent = ',boosterrolerenam (new_role_name)';
+          document.querySelector('#example pre code').textContent = '/boosterrolerenam "Elite Booster"';
+        } else if (command === 'boosterrolebase') {
+          document.querySelector('#syntax pre code').textContent = ',boosterrolebase (role)';
+          document.querySelector('#example pre code').textContent = '/boosterrolebase "VIP Member"';
+        }
+        showTab('syntax', document.querySelector('.tab:nth-child(1)')); // Switch to syntax tab
+      });
+    });
   </script>
 </body>
 </html>
