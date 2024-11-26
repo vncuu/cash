@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash is Unreal Bot</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="banner">
+      <h1>The Best Discord Bot Choice</h1>
+      <input type="text" id="command-search" placeholder="Search commands...">
+    </div>
+  </header>
+
+  <!-- Cash is Unreal Section -->
+  <section id="cash-is-unreal">
+    <div class="bot-info">
+      <img src="cash-is-unreal-pfp.png" alt="Cash is Unreal Bot" class="bot-pfp">
+      <div class="bot-description">
+        <h2>Cash is Unreal.</h2>
+        <p>A powerful bot made for full auto control of alt accounts, special booster roles, moderation, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commands Section -->
+  <section id="commands">
+    <div class="bot-commands">
+      <h3>Commands for Cash is Unreal.</h3>
+      <div class="command-list">
+        <div class="command-item" id="boosterrole">
+          <h4>/boosterrole</h4>
+          <p>Create a booster role.</p>
+        </div>
+        <div class="command-item" id="boosterrolerenam">
+          <h4>/boosterrolerenam</h4>
+          <p>Rename the booster role.</p>
+        </div>
+        <div class="command-item" id="boosterrolebase">
+          <h4>/boosterrolebase</h4>
+          <p>Change the role the bot gives you.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Commands -->
+    <div class="search-results">
+      <h3>Search Results:</h3>
+      <div id="search-output"></div>
+    </div>
+  </section>
+
+  <!-- Command Syntax and Examples Section -->
+  <section id="role-description">
+    <div class="tabs">
+      <button class="tab" onclick="showTab('syntax')">Syntax</button>
+      <button class="tab" onclick="showTab('example')">Example</button>
+    </div>
+    <div id="syntax" class="tab-content">
+      <h4>Syntax:</h4>
+      <pre>/boosterrole create [role name]</pre>
+      <pre>/boosterrolerenam [new role name]</pre>
+      <pre>/boosterrolebase [role]</pre>
+    </div>
+    <div id="example" class="tab-content hidden">
+      <h4>Example:</h4>
+      <pre>/boosterrole create "VIP Booster"</pre>
+      <pre>/boosterrolerenam "Elite Booster"</pre>
+      <pre>/boosterrolebase "VIP Role"</pre>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Cash is Unreal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
