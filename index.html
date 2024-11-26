@@ -4,10 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cash is Unreal Bot</title>
-  <!-- Link to the CSS File -->
-  <link rel="stylesheet" href="styles.css">
-  <!-- Link to the JavaScript File -->
-  <script src="script.js" defer></script>
+  
+  <!-- Embedded CSS -->
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #170221;
+      color: white;
+    }
+
+    header {
+      background-color: #530a78;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .banner h1 {
+      font-size: 2.5rem;
+      color: #a511f0;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      margin-top: 10px;
+      width: 50%;
+      border: none;
+      border-radius: 5px;
+      background-color: #42105c;
+      color: white;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      background-color: #9e51c4;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    .bot-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .bot-pfp {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .bot-description h2 {
+      font-size: 2rem;
+      color: #9e51c4;
+    }
+
+    .bot-description p {
+      font-size: 1rem;
+    }
+
+    #commands .command-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .command-item {
+      background-color: #42105c;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .command-item h4 {
+      color: #a511f0;
+      font-size: 1.2rem;
+    }
+
+    .search-results {
+      margin-top: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .tab {
+      background-color: #4f2563;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .tab:hover {
+      background-color: #9e51c4;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.hidden {
+      display: block;
+    }
+
+    .syntax-box {
+      background-color: #42105c;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    pre {
+      background-color: #530a78;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      overflow-x: auto;
+      color: #ecf0f1;
+    }
+
+    footer {
+      background-color: #42105c;
+      padding: 10px;
+      text-align: center;
+      color: #a511f0;
+    }
+  </style>
+
 </head>
 <body>
   <!-- Header Section -->
@@ -77,6 +210,37 @@
   <footer>
     <p>&copy; 2024 Cash is Unreal. All rights reserved.</p>
   </footer>
+
+  <!-- Embedded JavaScript -->
+  <script>
+    // Command Search Functionality
+    document.getElementById('command-search').addEventListener('input', function() {
+      let searchQuery = this.value.toLowerCase();
+      let commandItems = document.querySelectorAll('.command-item');
+      let searchOutput = document.getElementById('search-output');
+      
+      searchOutput.innerHTML = ''; // Clear previous results
+
+      commandItems.forEach(function(item) {
+        let commandName = item.querySelector('h4').textContent.toLowerCase();
+        if (commandName.includes(searchQuery)) {
+          searchOutput.innerHTML += `<p>${item.querySelector('h4').textContent}</p>`;
+        }
+      });
+
+      if (searchOutput.innerHTML === '') {
+        searchOutput.innerHTML = '<p>No results found.</p>';
+      }
+    });
+
+    // Tab Switching Functionality
+    function showTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(function(tabContent) {
+        tabContent.classList.add('hidden');
+      });
+
+      document.getElementById(tab).classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
-
